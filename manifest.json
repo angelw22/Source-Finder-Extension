@@ -1,0 +1,35 @@
+{
+  "name": "Source Finder",
+  "description": "Collect sources",
+  "version": "1.0",
+  "manifest_version": 3,
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  }, 
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["contentScript.css"],
+      "run_at": "document_end",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": {
+    "16": "/images/sf-logo.png",
+    "32": "/images/sf-logo.png",
+    "48": "/images/sf-logo.png",
+    "128": "/images/sf-logo.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "contextMenus", "webNavigation"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Source Finder",
+    "default_icon": {
+      "16": "/images/sf-logo.png",
+      "32": "/images/sf-logo.png",
+      "48": "/images/sf-logo.png",
+      "128": "/images/sf-logo.png"
+    }
+  }
+}
